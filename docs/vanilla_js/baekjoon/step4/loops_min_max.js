@@ -27,6 +27,3 @@ for(let i=0; i<count; i++){
 }
 
 console.log(`${min_max['min']} ${min_max['max']}`);
-
-console.log();
-
