@@ -1,4 +1,9 @@
-// 1-3 2-4 3-2 4-5 5-3
+//input.txt
+// 3
+// 4
+// 2
+// 5
+// 3
 
 const fs = require("fs");
 
@@ -49,7 +54,6 @@ const answer = [
   { answer_num: "E3", answer: "보통이다", orders: 3 },
 ];
 
-
 //문항 답항 정렬
 const questionSort = question.sort(function (a, b) {
   return a.orders - b.orders;
@@ -59,46 +63,50 @@ const answerSort = answer.sort(function (a, b) {
   return a.orders - b.orders;
 });
 
-
-for(let i = 0; i<questionSort.length;i++){
-    printQuestion(i);
-    printAnswer(i);
-    console.log(`답) (${input[i]})`);
-    console.log("\n");
+for (let i = 0; i < questionSort.length; i++) {
+  printQuestion(i);
+  printAnswer(i);
+  console.log(`답) (${input[i]})`);
+  console.log("\n");
 }
 
 console.log("--------------------- 설문자 선택 --------------------------");
-for(let i = 0; i<questionSort.length;i++){
-    printQuestion(i);
-    printUsersAnswer(`${input[i]}`);
-    console.log("\n");
+for (let i = 0; i < questionSort.length; i++) {
+  printQuestion(i);
+  printUsersAnswer(`${input[i]}`);
+  console.log("\n");
 }
 
 console.log("이용해주셔서 감사합니다!");
 
+//------------------------------------함수라인------------------------------------
+
 function printQuestion(i) {
+  //문항 출력
   console.log(`${questionSort[i].questions_num}) ${questionSort[i].questions}`);
 }
 
 function printAnswer(i) {
+  //답항 출력 - 답항 갯수에 맞춰 출력하기 위한 용도
   if (questionSort[i].answer_num == 1) {
     let count = questionSort[i].answer_num;
-    for (let i = 0; i < count; i++) console.log(`${i+1}) ${answerSort[i].answer}`);
+    for (let i = 0; i < count; i++) console.log(`${i + 1}) ${answerSort[i].answer}`);
   } else if (questionSort[i].answer_num == 2) {
     let count = questionSort[i].answer_num;
-    for (let i = 0; i < count; i++) console.log(`${i+1}) ${answerSort[i].answer}`);
+    for (let i = 0; i < count; i++) console.log(`${i + 1}) ${answerSort[i].answer}`);
   } else if (questionSort[i].answer_num == 3) {
     let count = questionSort[i].answer_num;
-    for (let i = 0; i < count; i++) console.log(`${i+1}) ${answerSort[i].answer}`);
+    for (let i = 0; i < count; i++) console.log(`${i + 1}) ${answerSort[i].answer}`);
   } else if (questionSort[i].answer_num == 4) {
     let count = questionSort[i].answer_num;
-    for (let i = 0; i < count; i++) console.log(`${i+1}) ${answerSort[i].answer}`);
+    for (let i = 0; i < count; i++) console.log(`${i + 1}) ${answerSort[i].answer}`);
   } else if (questionSort[i].answer_num == 5) {
     let count = questionSort[i].answer_num;
-    for (let i = 0; i < count; i++) console.log(`${i+1}) ${answerSort[i].answer}`);
+    for (let i = 0; i < count; i++) console.log(`${i + 1}) ${answerSort[i].answer}`);
   }
 }
 
-function printUsersAnswer(i){
-    console.log(`(${i})${answerSort[i-1].answer}`);
+function printUsersAnswer(i) {
+  //설문자가 선택한 답항 출력
+  console.log(`(${i})${answerSort[i - 1].answer}`);
 }
