@@ -1,5 +1,6 @@
 const animals = ["dog", "cat", "bird", "fish", "lizard"];
 
+// Normal
 for (let i = 0; i < animals.length; i++) {
   console.log(`${animals[i]}`);
 }
@@ -39,8 +40,8 @@ const array1 = ["a", "b", "c"];
 array1.forEach((element) => console.log(element));
 
 // Arrow Function
-let arrowFuntion = (element) => {
-  console.log(element);
+let arrowFuntion = (element, index) => {
+  console.log(`${element}, index ${index}`);
 };
 array1.forEach(arrowFuntion);
 

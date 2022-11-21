@@ -16,14 +16,33 @@
 // 출력
 // 첫째 줄에 N의 사이클 길이를 출력한다.
 
-
 // 코드
 const fs = require("fs");
 
 const filepath =
   process.platform === "linux" ? "/dev/stdin" : "docs/vanilla_js/input.txt";
-const inputs = fs.readFileSync(filepath).toString().map(x => Number(x));
+const inputs = fs.readFileSync(filepath).toString();
+
+let num = Number(inputs);
+let sum = 0;
+let i = 0;
+
+while (true) {
+  // 십의자리를 a, 일의자리를 b라고 설정 예) 26이면 a = 2, b = 6
+  let a = Math.floor(num / 10);
+  let b = num % 10;
+  sum = a + b;
+  i++;
+  if (sum < 10) {
+    sum = sum;
+  } else {
+    sum = sum%10;
+  }
+  num = b * 10 + sum;
+  if (num == inputs) break;
+}
+console.log(i);
 
 console.log();
 // 제출 링크
-// 
+// https://www.acmicpc.net/source/51807980
