@@ -29,19 +29,19 @@
     <a id="google" href="https://www.google.com">Google</a>
     <script>
         let queryBody = document.querySelectorAll("body");
-        for(let print of queryBody){
-            console.log(print);
-        }
+        queryBody.forEach((item)=>{
+            console.log(item)
+        })
 
         let queryList = document.querySelectorAll(".list");
-        for(let print of queryList){
-            console.log(print);
-        }
+        queryList.forEach((item)=>{
+            console.log(item)
+        })
 
         let queryItem = document.querySelectorAll("#item");
-        for(let print of queryItem){
-            console.log(print);
-        }
+        queryItem.forEach((item)=>{
+            console.log(item)
+        })
     </script>
 </body>
 </html>
