@@ -28,16 +28,19 @@
 
     <a id="google" href="https://www.google.com">Google</a>
     <script>
-        let queryBody = document.querySelectorAll("body");
+        // body내에 모든 형제 출력
+        let queryBody = document.querySelectorAll("body > *");
         queryBody.forEach((item)=>{
             console.log(item)
         })
 
+        // .list출력
         let queryList = document.querySelectorAll(".list");
         queryList.forEach((item)=>{
             console.log(item)
         })
 
+        // #item출력
         let queryItem = document.querySelectorAll("#item");
         queryItem.forEach((item)=>{
             console.log(item)
