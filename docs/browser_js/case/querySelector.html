@@ -31,19 +31,22 @@
         // body내에 모든 형제 출력
         let body = document.querySelectorAll("body > *");
         body.forEach((elements)=>{
-            console.log(elements)
+            console.log(
+                elements)
         });
-
-        // .list출력
+        // 회사 출력
         let list = document.querySelectorAll(".list");
-        list.forEach((elements)=>{
-            console.log(elements)
+        console.log("IT 회사 종류");
+        let company = list[0].querySelectorAll(".item");
+        company.forEach((elements)=>{
+            console.log(elements);
         });
-
-        // .item출력
-        let item = document.querySelectorAll(".item");
-        item.forEach((elements)=>{
-            console.log(elements)
+        
+        // 과일 출력
+        console.log("과일 종류");
+        let fruits = list[1].querySelectorAll(".item");
+        fruits.forEach((elements)=>{
+            console.log(elements);
         });
     </script>
 </body>
