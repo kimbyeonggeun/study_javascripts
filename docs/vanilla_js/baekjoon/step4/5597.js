@@ -25,9 +25,9 @@ for (let i = 1; i < 31; i++) {
   student_list.push(i);
 }
 
-for (let i = 0; i < student_list; i++) {
+for (let i = 0; i < student_list.length; i++) {
   for (let j = 0; j < arr.length; j++) {
-    if (student_list[i] === arr[j]) {
+    if (student_list[i] == arr[j]) {
       student_list.splice(i, 1);
       i--;
     }
@@ -41,4 +41,4 @@ for (let i = 0; i < student_list.length; i++) {
 console.log();
 
 // 제출 링크
-//
+// https://www.acmicpc.net/source/51941391
