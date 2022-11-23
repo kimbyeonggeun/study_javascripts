@@ -62,7 +62,13 @@ const answers = [
   { questions_uid: "Q5", example_uid: "E3" },
 ];
 
-let statistics = [];
+let statistics = [
+  { question: "", user_answer: "", questions_uid: "" },
+  { question: "", user_answer: "", questions_uid: "" },
+  { question: "", user_answer: "", questions_uid: "" },
+  { question: "", user_answer: "", questions_uid: "" },
+  { question: "", user_answer: "", questions_uid: "" },
+];
 
 // 정렬
 questions_list.sort((a, b) => a["orders"] - b["orders"]);
@@ -93,6 +99,7 @@ function nextSurvey() {
   // 문항이 끝까지 가면 마지막 문항 고정
   if (clickCount > 4) {
     clickCount = 5;
+    printStatistics();
     return;
   }
 
@@ -152,9 +159,31 @@ function printAnswer() {
   // 답항 출력
   let answer = ``;
   for (let i = 0; i < count; i++) {
-    answer += `<div id="answers"><label><input type="radio" id = "id${i}"onclick = "changeStatistics(${i})" name="answer" class="answers">(${example_list[i]["orders"]}) ${example_list[i]["example"]}</label></div>`;
+    answer += `<div id="answers"><input type="radio" id = "id${i}" onclick = "changeStatistics(${i})" name="answer"><label id = "label${i}" for = "id${i}" >(${example_list[i]["orders"]}) ${example_list[i]["example"]}</label></div>`;
   }
   queryAnswer.innerHTML = answer;
+}
+
+//통계 출력
+function printStatistics() {
+  let question = ``;
+  queryQuestion.innerHTML = question;
+
+  let answer = ``;
+  queryAnswer.innerHTML = answer;
+
+  let input = ``;
+  statistics.forEach((element) => {
+    input += `<div class="statistics">${element["questions_uid"]} ${element["question"]}</div><div class="statistics">답 : ${element["user_answer"]}</div>`;
+  });
+  queryStatistics.innerHTML = input;
+}
+// 통계 update
+function changeStatistics(i) {
+  statistics[clickCount].question = questions_list[clickCount].questions;
+  statistics[clickCount].questions_uid = questions_list[clickCount].questions_uid;
+  let temp = document.getElementById(`label${i}`);
+  statistics[clickCount].user_answer = temp.innerText;
 }
 
 // let question_compare;
