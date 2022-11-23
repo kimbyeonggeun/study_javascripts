@@ -93,7 +93,6 @@ function nextSurvey() {
   // 문항이 끝까지 가면 마지막 문항 고정
   if (clickCount > 4) {
     clickCount = 5;
-    alert("마지막 문항입니다.");
     return;
   }
 
@@ -123,7 +122,6 @@ function prevSurvey() {
   // 문항이 처음까지 가면 첫 문항 고정
   if (clickCount < 0) {
     clickCount = 0;
-    alert("첫 문항입니다.");
     return;
   }
 
