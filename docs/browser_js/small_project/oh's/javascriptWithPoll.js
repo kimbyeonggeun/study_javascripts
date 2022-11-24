@@ -1,3 +1,6 @@
+// 통계쪽 완성 못함
+// 시간될때 할것
+
 let questions_list = [
   {
     questions_uid: "Q1",
