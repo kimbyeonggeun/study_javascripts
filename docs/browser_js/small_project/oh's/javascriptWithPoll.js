@@ -83,7 +83,7 @@ for(let idx = 0; idx < questions_answers.length; idx++){
     questions.push(questions_answers[idx]["answer_uid"]);
   }
   question_compare = questions_answers[idx]["questions_uid"]; // 이전 uid 입력
-  if(idx == questions_answers.length - 1){polls.push(question);}
+  if(idx == questions_answers.length - 1){polls.push(questions);}
 }
 
 console.log(`${polls}`);
