@@ -159,9 +159,10 @@ queryprev.addEventListener("click", setPollContentPrev);
 let index = -1;
 function setPollContent() {
   index++;
-  if (index > 4) {
+  if (index > questions_list.length - 1) {
     alert("마지막 설문입니다.");
     index = 4;
+    return;
   }
   let queryContent = document.querySelector("#poll-contents");
   // polls[0]["questions_uid"]; // 설문 문항
@@ -176,7 +177,9 @@ function setPollContent() {
   polls[index]["answer_uids"].forEach((answer_uid, index) => {
     // answers
     // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
-    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${
+      index + 1
+    }) ${getAnswerByUid(answer_uid)}</label></div>`;
   });
   queryContent.innerHTML = desc;
 }
@@ -186,6 +189,7 @@ function setPollContentPrev() {
   if (index < 0) {
     alert("첫 설문입니다.");
     index = 0;
+    return;
   }
   let queryContent = document.querySelector("#poll-contents");
   // polls[0]["questions_uid"]; // 설문 문항
@@ -200,7 +204,9 @@ function setPollContentPrev() {
   polls[index]["answer_uids"].forEach((answer_uid, index) => {
     // answers
     // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
-    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${
+      index + 1
+    }) ${getAnswerByUid(answer_uid)}</label></div>`;
   });
   queryContent.innerHTML = desc;
 }
