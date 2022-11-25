@@ -117,7 +117,7 @@ function getQuestionByUid(question_uid) { // 문항 가져오는 함수
 }
 
 // 출력
-for (poll of polls) {
+for (let poll of polls) {
   console.log(`${poll["questions_uid"]}. ${getQuestionByUid(poll['questions_uid'])}`); // == polls[idx]
   let answer_uids = poll["answer_uids"];
   answer_uids.forEach((answer_uid, index) => {
