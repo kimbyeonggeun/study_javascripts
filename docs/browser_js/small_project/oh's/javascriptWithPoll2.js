@@ -176,7 +176,7 @@ function setPollContent() {
   polls[index]["answer_uids"].forEach((answer_uid, index) => {
     // answers
     // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
-    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}">(${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
   });
   queryContent.innerHTML = desc;
 }
@@ -200,7 +200,7 @@ function setPollContentPrev() {
   polls[index]["answer_uids"].forEach((answer_uid, index) => {
     // answers
     // console.log(`${index + 1}. ${getAnswerByUid(answer_uid)}`);
-    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}">(${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
+    desc += `<div><input type = "radio" id = "id${index}" name = "answer"><label for = "id${index}"> (${index + 1}) ${getAnswerByUid(answer_uid)}</label></div>`;
   });
   queryContent.innerHTML = desc;
 }
