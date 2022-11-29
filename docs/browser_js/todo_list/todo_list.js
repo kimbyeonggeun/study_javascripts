@@ -1,33 +1,36 @@
-const inputtask = document.querySelector("#inputtask");
+let inputtask = document.querySelector("#inputtask");
 
-const addbutton = document.querySelector("#addbtn");
+let addbutton = document.querySelector("#addbtn");
 
 let items = document.querySelector("#items");
 
+addbutton.addEventListener("click", (event) => {
+  addTask(event);
+});
+
 inputtask.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
-    addTask();
+    addTask(event);
   }
 });
 
-function addTask() {
-  const input = inputtask.value;
-  if (input == "") {
+function addTask(event) {
+  if (inputtask.value == "") {
     alert("Please enter a task");
     return;
   }
 
   let newTask = `<li  class="item">
-<span class="task">${input}</span>
-<span class="manage">
-    <span class="like">
-        <i class="material-icons">favorite_border</i>
+    <span class="task">${inputtask.value}</span>
+    <span>
+        <span class="like">
+            <i class="material-icons">favorite_border</i>
+        </span>
+        <span class="delete">
+            <i class="material-icons">delete</i>
+        </span>
     </span>
-    <span class="delete">
-        <i class="material-icons">delete</i>
-    </span>
-</span>
-</li>`;
+    </li>`;
 
   items.insertAdjacentHTML("beforeend", newTask);
 
