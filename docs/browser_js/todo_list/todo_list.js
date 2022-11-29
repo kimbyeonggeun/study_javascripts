@@ -1,14 +1,15 @@
 let inputtask = document.querySelector("#inputtask");
-
 let addbutton = document.querySelector("#addbtn");
-
 let items = document.querySelector("#items");
+
+let count = 1;
 
 addbutton.addEventListener("click", (event) => {
   addTask(event);
 });
 
 inputtask.addEventListener("keydown", (event) => {
+  console.log(event.code);
   if (event.key == "Enter") {
     addTask(event);
   }
@@ -16,6 +17,7 @@ inputtask.addEventListener("keydown", (event) => {
 
 function addTask(event) {
   if (inputtask.value == "") {
+    target.value = "";
     alert("Please enter a task");
     return;
   }
@@ -34,15 +36,15 @@ function addTask(event) {
 
   items.insertAdjacentHTML("beforeend", newTask);
 
-  const favorite = document.querySelector(".like>i");
-  favorite.addEventListener("click", (event) => {
+  items.addEventListener("click", (event) => {
     if (event.target.innerText == "favorite")
       event.target.innerText = "favorite_border";
-    else event.target.innerText = "favorite";
+    else if (event.target.innerText == "favorite_border")
+      event.target.innerText = "favorite";
   });
 
-  const deleteTask = document.querySelector(".delete>i");
-  deleteTask.addEventListener("click", (event) => {
-    event.target.parentElement.parentElement.parentElement.remove();
+  items.addEventListener("click", (event) => {
+    if (event.target.innerText == "delete")
+      event.target.parentElement.parentElement.parentElement.remove();
   });
 }
