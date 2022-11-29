@@ -41,10 +41,7 @@ function addTask(event) {
       event.target.innerText = "favorite_border";
     else if (event.target.innerText == "favorite_border")
       event.target.innerText = "favorite";
-  });
-
-  items.addEventListener("click", (event) => {
-    if (event.target.innerText == "delete")
+    else if (event.target.innerText == "delete")
       event.target.parentElement.parentElement.parentElement.remove();
   });
 }
