@@ -15,7 +15,7 @@ queryKeydown.addEventListener("keydown", (event) => {
   if (event.code == "Enter") {
     keydownDesc(queryKeydown.value);
   }
-  console.log(event.target);
+  // console.log(event.target);
 });
 
 function keydownDesc(desc) {
